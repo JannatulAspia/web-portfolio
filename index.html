@@ -1002,17 +1002,135 @@
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
     }
+    .btn {
+        padding: 12px 30px;
+        display: block;
+        margin: 20px auto 0;
+    }
     
     nav ul.active {
         display: flex;
     }
+    .container {
+        padding: 0 10px;
+    }
+     .profile-image {
+        width: 300px;
+        height: 350px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+     .nav-container {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+    nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: none; /* Mobile menu initially hidden */
+    }
+     nav ul.active {
+        display: flex; /* Show menu when toggled */
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .hero {
+        padding: 130px 20px 80px;
+        margin-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
     
     nav ul li {
         margin: 10px 0;
     }
+    .about-content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .about-text, .contact-info {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
     
     .menu-toggle {
         display: flex;
+        cursor: pointer;
+        margin-left: auto;
+    }
+}
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .pub-title, .research-title, .project-title {
+        font-size: 1.2rem;
+    }
+
+    .interest-item, .skill-item div {
+        font-size: 1rem;
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-degree {
+        font-size: 1.2rem;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 300px;
+    }
+
+    .profile-name {
+        font-size: 1.5rem;
+    }
+
+    .profile-degree {
+        font-size: 1.1rem;
     }
 }
 @media (max-width: 768px) {
