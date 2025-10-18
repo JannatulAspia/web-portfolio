@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <style>
+        :root {
+            --primary-color: #6d5dcc;
+            --secondary-color: #4a3ca3;
+            --accent-color: #ff7e5f;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --review-color: #17a2b8;
+            --gradient: linear-gradient(135deg, #6d5dcc 0%, #4a3ca3 100%);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+       body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    background-color: #f9fbfd;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+        
+      .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+}
+         section {
+    padding: 80px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        /* Header Styles */
+       header {
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 0;
+    left: 0;
+    right: 0;
+}
+        
+        header.scrolled {
+            padding: 5px 0;
+        }
+        
+       .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            margin-right: 12px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        /* Main Section Styles */
+         .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 15px 100px;
+    margin-top: 85px;
+    width: 100%;
+    box-sizing: border-box;
+}
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* UPDATED About Me Section - Bigger Image, Equal Height */
+        .about {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 80px 0;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 126, 95, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+            z-index: 0;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(109, 93, 204, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+       .about-content {
+    display: flex;
+  align-items: flex-start; /* align top to top */
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+
+}
+
+.about-text {
+   flex: 1;
+  max-width: 55%;
+  min-width: 300px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.about-text p {
+   margin-bottom: 20px;
+  text-align: justify;
+  color: #555;
+}
+
+.about-image {
+    flex: 1;
+  max-width: 40%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.about-image img {
+    width: 100%;   
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.about-image h3 {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+        
+        .profile-image {
+              width: 80%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+        }
+        
+        .profile-info {
+            text-align: center;
+        }
+        
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .profile-degree {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .profile-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+        
+        .contact-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Education Section */
+        .academic-background {
+            background-color: #f9fbfd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .academic-background::before {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(74, 60, 163, 0.05);
+            border-radius: 50%;
+            top: -125px;
+            left: -125px;
+        }
+        
+        .education-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .education-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .education-item {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-icon {
+            width: 80px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .education-content {
+            padding: 30px;
+            flex: 1;
+        }
+        
+        .education-degree {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .education-institution {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .education-date {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .education-gpa {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        /* Research Interests Section */
+        .research-interests {
+    background-color: white;
+    position: relative;
+}
+
+.research-interests::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 126, 95, 0.1);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+    z-index: 0;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.interest-item {
+    background: linear-gradient(135deg, #f9fbfd 0%, white 100%);
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid #eaeaea;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.interest-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: var(--gradient);
+    color: white;
+}
+
+/* Research Experience Status Styles - এই নতুন part টা add করুন */
+.research-status {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.research-status.review {
+    background-color: var(--review-color);
+    color: white;
+}
+
+.research-status.accepted {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.research-conference {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+        /* Publications Section - BEFORE Research Experience */
+        .publications {
+            background-color: #f9fbfd;
+            position: relative;
+        }
+        
+        .publications::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(109, 93, 204, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+        }
+    
+        .pub-column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pub-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            border-left: 5px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pub-item::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background: rgba(255, 126, 95, 0.05);
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .pub-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pub-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            z-index: 1;
+            line-height: 1.4;
+        }
+        
+        .pub-conference {
+            margin-bottom: 20px;
+            font-style: italic;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pub-conference a {
+            color: var(--primary-color) !important;
+            text-decoration: none !important;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .pub-conference a:hover {
+             color: var(--accent-color) !important;
+    text-decoration: underline !important;
+        }
+        .status-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.research-conference-inline {
+    font-style: italic;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.research-status.submitted {
+    background-color: #8A2BE2; /* Purple color */
+    color: white;
+}
+        .status {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .status.review {
+            background-color: var(--review-color);
+            color: white;
+        }
+        
+        .status.accepted {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .pub-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tag {
+            background-color: #eef5ff;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid #dbe7ff;
+            font-weight: 500;
+        }
+        
+        /* Research Experience Section */
+        .research-experience {
+            background-color: white;
+            position: relative;
+        }
+        
+        .research-status.submitted {
+    background-color: #8A2BE2; /* Purple color */
+    color: white;
+}
+        .research-experience::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(109, 93, 204, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .pub-conference a {
+  color: var(--primary-color);
+  text-decoration: none !important;  /* underline জোর করে সরাবে */
+  font-weight: 500;
+  transition: color 0.3s;
+  border-bottom: none !important; /* যদি border দিয়ে underline হয় *
+}
+
+.pub-conference a:hover {
+   color: var(--accent-color);
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+        .research-status.submitted {
+    background-color: #8A2BE2; /* Purple color */
+    color: white;
+}
+        
+        .research-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .research-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .research-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .research-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            line-height: 1.4;
+        }
+        
+        .research-status {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .research-status.review {
+            background-color: var(--review-color);
+            color: white;
+        }
+        
+        .research-status.accepted {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .research-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        /* Applied ML Projects Section */
+        .applied-projects {
+            background-color: #f9fbfd;
+            position: relative;
+        }
+        
+        .applied-projects::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(74, 60, 163, 0.05);
+            border-radius: 50%;
+            bottom: -125px;
+            left: -125px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-item {
+            background: linear-gradient(135deg, #f9fbfd 0%, white 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            border: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .project-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Skills Section */
+        /* Skills Cards Layout */
+.skills-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.skill-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-color);
+}
+
+.skill-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.skill-tag {
+  background: var(--gradient);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+.skill-tag:hover {
+  transform: translateY(-3px);
+}
+/* Manuscript in Preparation Status Styles */
+.status.preparation {
+    background-color: var(--warning-color);
+    color: #000;
+}
+
+.research-status.preparation {
+    background-color: var(--warning-color);
+    color: #000;
+}
+
+/* Responsive design */
+/* Mobile Menu Fix */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .skill-card {
+    padding: 20px;
+  }
+}
+        
+        /* Contact Section - Updated to "Get In Touch" */
+        .contact {
+            background: linear-gradient(135deg, #f9fbfd 0%, #eef5ff 100%);
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(109, 93, 204, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 1;
+        }
+        .contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon-large {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            width: 30px;
+        }
+        /* Enhanced Map Section Styles */
+/* Map Button Styles */
+.map-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--secondary-color);
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background: var(--primary-color);
+  color: white;
+}
+/* Responsive adjustments for map */
+@media (max-width: 768px) {
+    .map-container {
+        padding: 15px;
+    }
+    
+    .map-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .map-wrapper iframe {
+        height: 200px;
+    }
+}
+        .map-placeholder {
+            background: #f8f9fa;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            border: 2px dashed #dee2e6;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 60px 0 40px;
+            position: relative;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+                min-height: auto;
+            }
+            
+            .about-text {
+                text-align: center;
+            }
+            
+            .profile-image {
+                width: 350px;
+                height: 400px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+        padding: 0 10px;  /* এই লাইনটা যোগ করুন */
+    }
+
+            .nav-container {
+                flex-direction: column;
+                 padding: 15px 10px;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 10px 15px;
+            }
+            
+            .hero {
+                padding: 130px 20px 80px;
+                margin-top: 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+            }
+            
+            .education-item {
+                flex-direction: column;
+            }
+            
+            .education-icon {
+                width: 100%;
+                height: 70px;
+            }
+            
+            .education-details {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .profile-image {
+                width: 300px;
+                height: 350px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .about-text, .contact-info {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .pub-title, .research-title, .project-title {
+                font-size: 1.2rem;
+            }
+            
+            .interest-item, .skill-item div {
+                font-size: 1rem;
+            }
+            
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-degree {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 250px;
+                height: 300px;
+            }
+            
+            .profile-name {
+                font-size: 1.5rem;
+            }
+            
+            .profile-degree {
+                font-size: 1.1rem;
+            }
+        }
+        /* Animation Effects */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typing Effect */
+.typing-container {
+  display: inline-block;
+  position: relative;
+}
+.typing {
+  display: inline-block;
+  border-right: 3px solid var(--accent-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent-color) }
+}
+.typing.finished {
+  border-right: none;
+  animation: none;
+}
+/* Mobile Menu Button Styles */
+.menu-toggle {
+    display: none; /* Hidden on desktop by default */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--secondary-color); /* Use your theme color */
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Mobile-responsive behavior */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show on mobile */
+    }
+    
+    /* Hide regular navigation on mobile */
+    nav ul {
+        display: none;
+    }
+    
+    /* Optional: Style for when menu is active */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+    </style>
+</head>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // 1s animation
+    once: true      // scroll করলে একবারই animate হবে
+  });
+  // Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('nav ul');
+
+if (mobileMenu && navMenu) {
+    mobileMenu.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on links
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+}
+</script>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-img"><i class="fas fa-code"></i></div>
+                <div class="logo-text">Aspia</div>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academic">Education</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Get In Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="hero" id="home" data-aos="fade-up">
+  <div class="container hero-content">
+    <div class="typing-container">
+      <h1 class="typing">Hello! I'm Aspia 👋</h1>
+    </div>
+    <p>Computer Science Graduate | Research in AI & Computer Vision | Seeking PhD Opportunities</p>
+    <a href="#publications" class="btn">View My Work</a>
+  </div>
+</section>
+
+    <!-- UPDATED About Me Section - Bigger Image, Equal Height -->
+    <!-- UPDATED About Me Section - Bigger Image, Equal Height -->
+<section class="about" id="about">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+                <p>I am a Computer Science graduate passionate about deep learning, computer vision, and AI for real-world challenges. My research explores interpretable and robust models for medical imaging, autonomous systems, and multimodal data analysis.</p>
+                <p>I have hands-on experience with CNNs, Transformers, YOLO, and ensemble methods, with expertise in multimodal fusion, explainable AI, weakly supervised learning, and dataset curation. I am seeking Ph.D. opportunities to advance AI research in medical imaging, autonomous detection, and interpretable deep learning, while contributing to impactful applications. Outside of research, I enjoy competitive programming and exploring new AI papers.</p>
+            </div>
+            <div class="about-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="./aspia.jpeg" alt="Your Name" class="profile-image">
+                <div class="profile-info">
+                    <div class="profile-name">Jannatul Ferdus Aspia</div>
+                    <div class="profile-degree">BSc. in Computer Science & Engineering</div>
+                    <div class="profile-contact">
+                        <a href="mailto:your.email@example.com" class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jannatul-ferdus-aspia-0431b937a/" target="_blank" class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Education Section -->
+    <section class="academic-background" id="academic">
+        <div class="container">
+            <div class="education-header" data-aos="fade-up">
+                <h2 class="section-title">Education</h2>
+                <p class="education-subtitle">My academic journey</p>
+            </div>
+            <div class="education-container">
+                <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">B.Sc. in Computer Science & Engineering</h3>
+                        <p class="education-institution">Sylhet Engineering College (Affiliated with Shahjalal University of Science and Technology)</p>
+                        <div class="education-details">
+                            <span class="education-date">2020-2025</span>
+                            <span class="education-gpa">CGPA: 3.55/4.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Higher School Certificate</h3>
+                        <p class="education-institution">Border Guard Public School and College, Sylhet</p>
+                        <div class="education-details">
+                            <span class="education-date">2019</span>
+                            <span class="education-gpa">GPA: 4.58/5.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-degree">Secondary School Certificate</h3>
+                        <p class="education-institution">Border Guard Public School and College, Sylhet</p>
+                        <div class="education-details">
+                            <span class="education-date">2017</span>
+                            <span class="education-gpa">GPA: 4.89/5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section class="research-interests" id="research">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Research Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-item" data-aos="zoom-in">Machine Learning</div>
+                <div class="interest-item" data-aos="zoom-in">Deep Learning</div>
+                <div class="interest-item" data-aos="zoom-in">Computer Vision</div>
+                <div class="interest-item" data-aos="zoom-in">Image Processing</div>
+                <div class="interest-item" data-aos="zoom-in">Explainable & Interpretable AI</div>
+                <div class="interest-item" data-aos="zoom-in">Real-time AI Systems</div>
+                <div class="interest-item" data-aos="zoom-in">Medical Imaging & AI for Health Care</div>
+                <div class="interest-item" data-aos="zoom-in">Multimodal Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section - NOW BEFORE Research Experience -->
+   <!-- Publications Section -->
+<!-- Publications Section -->
+<section class="publications" id="publications">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Publications</h2>
+        <div class="pub-column">
+            <!-- 1. Smoker Status Prediction - FIRST এনে দিন -->
+            <div class="pub-item" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="pub-title">An Innovative Approach to Smoker Status Prediction with ML Algorithms</h3>
+                <div class="pub-conference">
+                    <a href="#" target="_blank">International Conference 2025</a>
+                </div>
+                <span class="status accepted">Accepted</span>
+                <div class="pub-tags">
+                    <span class="tag">Smoking-Status Prediction</span>
+                    <span class="tag">Predictive Modeling</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">HEStacked Model</span>
+                    <span class="tag">Ensemble Model</span>
+                </div>
+            </div>
+
+            <!-- 2. NEW: Alzheimer's Disease Classification - SECOND এ add করুন -->
+            <div class="pub-item" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="pub-title">Dual-Stage Vision Transformer (DS-ViT) with Attention-Guided Patch Aggregation for Alzheimer's Disease Classification</h3>
+                <div class="pub-conference">
+                    <a href="#" target="_blank">International Conference 2026</a>
+                </div>
+                <span class="status review" style="background-color: #8A2BE2; color: white;">Submitted</span>
+                <div class="pub-tags">
+                    <span class="tag">Dual-Stage Vision Transformer</span>
+                    <span class="tag">Alzheimer's Disease</span>
+                    <span class="tag">Magnetic Resonance Imaging (MRI)</span>
+                    <span class="tag">Attention Mechanism</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Medical Image Analysis</span>
+                </div>
+            </div>
+
+           
+
+            <!-- 4. Kidney Stone Classification -->
+            <div class="pub-item" data-aos="fade-up" data-aos-delay="250">
+                <h3 class="pub-title">Ensemble-ASNet: Weighted Transfer Learning Framework with Grad-CAM++ for Robust Kidney Stone Classification</h3>
+                <div class="pub-conference">
+                    <a href="#" target="_blank">IEEE Conference 2025</a>
+                </div>
+                <span class="status review">Under Review</span>
+                <div class="pub-tags">
+                    <span class="tag">Kidney stone detection</span>
+                    <span class="tag">Medical image classification</span>
+                    <span class="tag">Deep learning</span>
+                    <span class="tag">Convolutional neural networks</span>
+                    <span class="tag">Ensemble learning</span>
+                    <span class="tag">Grad-CAM++</span>
+                    <span class="tag">Explainable AI</span>
+                </div>
+            </div>
+            
+            <!-- 5. Pavement Crack Detection -->
+            <div class="pub-item" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="pub-title">Real-Time Pavement Crack Detection Using YOLOv9: A Deep Learning Approach for Infrastructure Monitoring</h3>
+                <div class="pub-conference">
+                    <a href="#" target="_blank">IEEE Conference 2025</a>
+                </div>
+                <span class="status review">Under Review</span>
+                <div class="pub-tags">
+                    <span class="tag">YOLOv9</span>
+                    <span class="tag">Pavement crack detection</span>
+                    <span class="tag">Crack classification</span>
+                    <span class="tag">Real-time image processing</span>
+                    <span class="tag">Deep learning</span>
+                    <span class="tag">Infrastructure</span>
+                    <span class="tag">Monitoring</span>
+                    <span class="tag">Object detection</span>
+                </div>
+            </div>
+             <!-- 3. Cross-Attention CNN-ViT - THIRD এ রাখুন -->
+            <div class="pub-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="pub-title">Cross-Attention CNN-ViT Hybrid With Dual Explainability for Retinal OCT Classification</h3>
+                <span class="status preparation">Manuscript in preparation for journal submission</span>
+                <div class="pub-tags">
+                    <span class="tag">CNN-ViT Hybrid</span>
+                    <span class="tag">Cross-Attention</span>
+                    <span class="tag">Retinal OCT</span>
+                    <span class="tag">Medical Imaging</span>
+                    <span class="tag">Explainable AI</span>
+                    <span class="tag">Grad-CAM</span>
+                    <span class="tag">Attention Map</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Research Experience Section -->
+    <!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<!-- Research Experience Section -->
+<section class="research-experience" id="experience">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Research Experience</h2>
+        <div class="research-container">
+
+            <!-- NEW: DS-ViT for Alzheimer's - FIRST এ add করুন -->
+            <div class="research-item" data-aos="fade-left">
+                <h3 class="research-title">Dual-Stage Vision Transformer for Alzheimer's Disease</h3>
+                <div class="status-line">
+                    <span class="research-status submitted">Submitted</span>
+                    <span class="research-conference-inline">
+                        as "Dual-Stage Vision Transformer (DS-ViT) with Attention-Guided Patch Aggregation for Alzheimer's Disease Classification" - 
+                        <a href="#" target="_blank" style="text-decoration: none; border-bottom: none;">International Conference 2026</a>
+                    </span>
+                </div>
+                <p class="research-description">Created a novel transformer-based global attention to classify four stages of Alzheimer's disease from MRI scans. Achieved 95.40% accuracy, outperforming state-of-the-art CNN and ViT models, demonstrating strong potential for early and automated dementia diagnosis.</p>
+            </div>
+
+            <!-- Kidney Stone Classification -->
+            <div class="research-item" data-aos="fade-left">
+                <h3 class="research-title">Ensemble-ASNet for Kidney Stone Classification</h3>
+                <div class="status-line">
+                    <span class="research-status review">Under Review</span>
+                    <span class="research-conference-inline">
+                        as "Ensemble-ASNet: Weighted Transfer Learning Framework with Grad-CAM++ for Robust Kidney Stone Classification" - 
+                        <a href="#" target="_blank" style="text-decoration: none; border-bottom: none;">IEEE Conference 2025</a>
+                    </span>
+                </div>
+                <p class="research-description">Developed a weighted ensemble of InceptionV3, VGG16, and MobileNetV2 for accurate and interpretable kidney stone detection from CT scans. Integrated Grad-CAM++ for model interpretability and optimized ensemble weights for combining class probabilities. Achieved 99.81% accuracy, precision, recall, and F1-score, validating clinical relevance and highlighting important regions in scans. Demonstrated a robust, precise, and explainable approach with potential for clinical deployment and multi-institutional dataset expansion.</p>
+            </div>
+
+            <!-- Pavement Crack Detection -->
+            <div class="research-item" data-aos="fade-left">
+                <h3 class="research-title">Pavement Crack Detection using YOLOv9</h3>
+                <div class="status-line">
+                    <span class="research-status review">Under Review</span>
+                    <span class="research-conference-inline">
+                        as "Real-Time Pavement Crack Detection Using YOLOv9: A Deep Learning Approach for Infrastructure Monitoring" - 
+                        <a href="#" target="_blank" style="text-decoration: none; border-bottom: none;">IEEE Conference 2025</a>
+                    </span>
+                </div>
+                <p class="research-description">Built an automated system for real-time detection of four pavement crack types (pothole, longitudinal, transverse, alligator) using a custom-annotated dataset of 1,200 images. Trained and evaluated YOLOv9, achieving 73.2% F1-score and 70.4% mAP. The system provides precise, scalable, and rapid crack detection, supporting informed decision-making for road maintenance and infrastructure safety.</p>
+            </div>
+
+            <!-- Smoker Status Prediction -->
+            <div class="research-item" data-aos="fade-left">
+                <h3 class="research-title">Smoker Status Prediction using Machine Learning</h3>
+                <div class="status-line">
+                    <span class="research-status accepted">Accepted</span>
+                    <span class="research-conference-inline">
+                        as "An Innovative Approach to Smoker Status Prediction with ML Algorithms" - 
+                        <a href="#" target="_blank" style="text-decoration: none; border-bottom: none;">International Conference 2025</a>
+                    </span>
+                </div>
+                <p class="research-description">Designed predictive models to classify smoking status of individuals using health and demographic features (age, height, weight, waist circumference, vision, hearing, blood pressure). Evaluated seven ML algorithms, including Naïve Bayes, Logistic Regression, Random Forest, XGBoost, Decision Tree, KNeighbors, and a novel HEStacked approach. The HEStacked model achieved 88.03% precision, demonstrating strong potential for public health interventions and targeted disease prevention.</p>
+            </div>
+
+            <!-- Cross-Attention CNN-ViT -->
+            <!-- Cross-Attention CNN-ViT -->
+<div class="research-item" data-aos="fade-left">
+    <h3 class="research-title">Cross-Attention CNN-ViT Hybrid With Dual Explainability for Retinal OCT Classification</h3>
+    <div class="status-line">
+        <span class="research-status preparation">Manuscript in preparation for journal submission</span>
+    </div>
+    <p class="research-description">Developed a hybrid CNN-ViT model leveraging cross-attention mechanisms to improve multi-class retinal OCT image classification. Integrated dual explainability techniques like Grad-Cam and Attention Map to visualize both spatial and feature-level attention, enhancing interpretability. Achieved high accuracy across 8 retinal disease classes, demonstrating a robust and explainable approach for ophthalmic diagnostics. Manuscript in preparation for journal submission.</p>
+</div>
+
+        </div>
+    </div>
+</section>
+    <!-- Applied ML Projects Section -->
+    <section class="applied-projects" id="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Applied ML Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item" data-aos="zoom-in">
+                    <h3 class="project-title">Face Mask Detection</h3>
+                    <p class="project-description">Developed a YOLOv8-based object detection model capable of identifying three categories — 
+mask, no mask, and bad mask — from both images and videos. Collected, cleaned, and 
+augmented dataset images to improve model performance. The system can be used for real-time 
+monitoring in public spaces to ensure mask compliance.</p>
+<p>Tools & Technologies: Python, PyTorch, OpenCV, Google Colab </p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-item" data-aos="zoom-in">
+                    <h3 class="project-title">Brain Tumor Classification</h3>
+                    <p class="project-description">Designed a CNN model to classify brain tumors from CT and MRI images, achieving superior 
+accuracy over baselines. Managed dataset collection, preprocessing, augmentation, and model 
+training. Deployed as a Streamlit web app for real-time prediction and visualization. </p>
+<p>Tools & Technologies: Python, TensorFlow, NumPy, Pandas, OpenCV, Streamlit. </p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-item" data-aos="zoom-in">
+                    <h3 class="project-title">Vehicle Detection</h3>
+                    <p class="project-description">Implemented a YOLOv12 model to detect 17 distinct vehicle types in images and videos. 
+Collected, cleaned, and augmented dataset images to enhance model performance. The system 
+supports both static image processing and real-time video detection, making it suitable for traffic 
+analysis, surveillance, and transportation monitoring.</p>
+<p>Tools & Technologies: Python, PyTorch, OpenCV, Google Colab </p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <!-- Technical Skills Section -->
+<!-- Technical Skills Section -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+    
+    <div class="skills-cards" data-aos="fade-up">
+      <div class="skills-row">
+        <!-- Languages Card -->
+        <div class="skill-card" data-aos="zoom-in">
+          <h3 class="card-title"><i class="fas fa-code"></i> Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">C++</div>
+            <div class="skill-tag">C</div>
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">CSS</div>
+          </div>
+        </div>
+        
+        <!-- ML & Deep Learning Card -->
+        <div class="skill-card" data-aos="zoom-in">
+          <h3 class="card-title"><i class="fas fa-brain"></i> ML & Deep Learning</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">PyTorch</div>
+            <div class="skill-tag">TensorFlow</div>
+            <div class="skill-tag">Keras</div>
+            <div class="skill-tag">Scikit-learn</div>
+            <div class="skill-tag">CUDA</div>
+            <div class="skill-tag">XGBoost</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-row">
+        <!-- Computer Vision Card -->
+        <div class="skill-card" data-aos="zoom-in">
+          <h3 class="card-title"><i class="fas fa-eye"></i> Computer Vision</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">OpenCV</div>
+            <div class="skill-tag">YOLO</div>
+            <div class="skill-tag">CNN</div>
+            <div class="skill-tag">Transformers</div>
+            <div class="skill-tag">Roboflow</div>
+          </div>
+        </div>
+        
+        <!-- Data Science Card -->
+        <div class="skill-card" data-aos="zoom-in">
+          <h3 class="card-title"><i class="fas fa-chart-bar"></i> Data Science</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">Pandas</div>
+            <div class="skill-tag">NumPy</div>
+            <div class="skill-tag">Matplotlib</div>
+            <div class="skill-tag">Seaborn</div>
+            <div class="skill-tag">MySQL</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tools Card (full width) -->
+      <div class="skill-card full-width" data-aos="zoom-in">
+        <h3 class="card-title"><i class="fas fa-tools"></i> Tools & Technologies</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">VS Code</div>
+          <div class="skill-tag">Jupyter Notebook</div>
+          <div class="skill-tag">Code::Blocks</div>
+          <div class="skill-tag">Anaconda</div>
+          <div class="skill-tag">Bootstrap</div>
+          <div class="skill-tag">Git</div>
+          <div class="skill-tag">GitHub</div>
+          <div class="skill-tag">Linux (Ubuntu)</div>
+          <div class="skill-tag">Windows</div>
+          <div class="skill-tag">LaTeX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section - Updated to "Get In Touch" -->
+    <!-- Contact Section - Updated to "Get In Touch" -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon-large"></i>
+                        <div>
+                            <strong>Address</strong><br>
+                            Chali Bondor,Subhanighat<br>
+                            Syhet,Bangladesh
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon-large"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:your.email@example.com">jannatul.aspia2001@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin contact-icon-large"></i>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/jannatul-ferdus-aspia-0431b937a/" target="_blank">linkedin.com/in/yourprofile</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Map Section -->
+                <!-- Enhanced Map Section -->
+<div class="map-container" data-aos="zoom-in" data-aos-delay="300">
+  <div class="map-header">
+    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+    <p>Chali Bondor, Subhanighat, Sylhet, Bangladesh</p>
+  </div>
+  <div class="map-wrapper">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.984807714955!2d91.860394575387!3d24.899512877909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3750552bc24e449d%3A0x5b0f2bae5b5b5b5b!2sChali%20Bondor%2C%20Subhanighat%2C%20Sylhet%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1690000000000!5m2!1sen!2sbd" 
+      width="100%" 
+      height="250" 
+      style="border:0; border-radius: 8px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      title="My Location in Chali Bondor, Sylhet">
+    </iframe>
+  </div>
+  <div class="map-actions">
+    <a href="https://maps.google.com/?q=Chali+Bondor,Subhanighat,Sylhet,Bangladesh" target="_blank" class="map-btn">
+      <i class="fas fa-directions"></i> Get Directions
+    </a>
+  </div>
+</div>
+            </div>
+            
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <p class="footer-text">&copy; 2025 Aspia. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+    <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a, .btn').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Stop cursor after typing animation - এই part টা add করুন
+    document.addEventListener('DOMContentLoaded', function() {
+      const typingElement = document.querySelector('.typing');
+      
+      setTimeout(function() {
+        typingElement.classList.add('finished');
+      }, 2000); // Matches the 2s animation duration
+    });
+    // Mobile menu toggle fix
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+});
+</script>
+</body>
+</html>
