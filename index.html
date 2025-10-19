@@ -560,6 +560,49 @@
             position: relative;
             z-index: 1;
         }
+        /* -----------------------------
+   Fix for Publication Keywords (Aspia version)
+------------------------------*/
+
+.publication {
+  margin-top: 40px;
+}
+
+.publication-item {
+  margin-bottom: 25px;
+  padding: 15px 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  transition: 0.3s ease;
+}
+
+.publication-item:hover {
+  background: #f3faff;
+  transform: translateY(-3px);
+}
+
+.publication-item p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.publication-item p strong {
+  display: inline-block;
+  min-width: 90px; /* Aligns all labels (Authors, Title, Keywords) */
+  color: #000;
+}
+
+.publication-item p:nth-child(3) {
+  margin-top: 12px;
+  border-top: 1px dashed #ccc;
+  padding-top: 8px;
+  font-style: italic;
+  color: #555;
+}
+
         
         .pub-item {
             background-color: white;
@@ -695,15 +738,25 @@
         }
         
         .pub-tags {
-            dbackground: rgba(240, 240, 240, 0.95);
-  color: #333 !important;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s;
+                display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+
         }
+        .tag:hover {
+    background: var(--gradient);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.pub-item .pub-tags {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
         .pub-tags .tag:hover {
   background: var(--gradient);
   color: #fff !important;
@@ -711,13 +764,16 @@
 
         
         .tag {
-            background-color: #eef5ff;
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            border: 1px solid #dbe7ff;
-            font-weight: 500;
+           background-color: #eef5ff;
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    border: 1px solid #dbe7ff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    line-height: 1.2;
         }
         
         /* Research Experience Section */
