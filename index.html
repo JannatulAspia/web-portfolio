@@ -10,7 +10,7 @@
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <style>
         :root {
-            :root {
+           
      --primary-color: #2563eb;       /* Blue */
     --secondary-color: #1e40af;     /* Dark Blue */
     --accent-color: #06b6d4;        /* Cyan */
@@ -498,13 +498,14 @@
     border: 1px solid #eaeaea;
     font-size: 1.1rem;
     font-weight: 500;
+    color: var(--text-color); /* Ensure original text color */
 }
 
 .interest-item:hover {
-    transform: translateY(-8px);
+   transform: translateY(-8px);
     background: var(--gradient);
-  color: #fff !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: #ffffff !important; /* White text on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Research Experience Status Styles - এই নতুন part টা add করুন */
@@ -718,7 +719,7 @@
 }
 
 .status.submitted {
-    background: #8A2BE2 !important;
+     background: #8A2BE2 !important;
     color: white !important;
 }
 
@@ -804,6 +805,7 @@
 }
 
 .research-status.submitted {
+    background-color: #8A2BE2 !important;
     background: #8A2BE2 !important;
     color: white !important;
 }
@@ -866,9 +868,17 @@
         }
         
         .research-item:hover {
+        color: #222 !important;
             transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
+        .skill-item:hover{
+            color: #222 !important; 
+        }
+        .publication-status.submitted {
+  color: purple !important;
+}
+
         
         .research-title {
             font-size: 1.4rem;
@@ -1018,18 +1028,19 @@
 }
 
 .skill-tag {
-  background: rgba(240, 240, 240, 0.9);
-  color: #222 !important; /* dark text */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-weight: 500;
-  transition: all 0.3s;
+ background: rgba(240, 240, 240, 0.9);
+    color: #222 !important; /* Dark text */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 .skill-tag:hover {
-  background: var(--gradient);
-  color: #fff !important;
+   background: var(--gradient);
+    color: #ffffff !important; /* White text on hover */
+    transform: translateY(-3px);
 }
 /* Manuscript in Preparation Status Styles */
 .status.preparation {
@@ -1042,6 +1053,7 @@
    background-color: var(--warning-color); /* Amber */
     color: #000;
 }
+
 
 /* Responsive design */
 /* Mobile Menu Fix */
@@ -1649,6 +1661,39 @@ if (mobileMenu && navMenu) {
     });
 }
 </script>
+// Add this script before closing </body> tag
+document.addEventListener('DOMContentLoaded', function() {
+    // Fix hover text colors
+    const interestItems = document.querySelectorAll('.interest-item');
+    const skillTags = document.querySelectorAll('.skill-tag');
+    const submittedStatuses = document.querySelectorAll('.status.submitted, .research-status.submitted');
+    
+    // Fix research interests hover
+    interestItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+            this.style.color = 'white';
+        });
+        item.addEventListener('mouseout', function() {
+            this.style.color = '';
+        });
+    });
+    
+    // Fix technical skills hover
+    skillTags.forEach(tag => {
+        tag.addEventListener('mouseover', function() {
+            this.style.color = 'white';
+        });
+        tag.addEventListener('mouseout', function() {
+            this.style.color = '';
+        });
+    });
+    
+    // Fix submitted status colors
+    submittedStatuses.forEach(status => {
+        status.style.backgroundColor = '#8A2BE2';
+        status.style.color = 'white';
+    });
+});
 
 <body>
     <!-- Header Section -->
@@ -1822,7 +1867,7 @@ if (mobileMenu && navMenu) {
                 <div class="pub-conference">
                     <a href="#" target="_blank">International Conference 2026</a>
                 </div>
-                <span class="status review" style="background-color: #8A2BE2; color: white;">Submitted</span>
+                <span class="status review" style="background-color: #8A2BE2 !important; color: white !important;">Submitted</span>
                 <div class="pub-tags">
                     <span class="tag">Dual-Stage Vision Transformer</span>
                     <span class="tag">Alzheimer's Disease</span>
