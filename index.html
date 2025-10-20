@@ -1661,39 +1661,7 @@ if (mobileMenu && navMenu) {
     });
 }
 </script>
-// Add this script before closing </body> tag
-document.addEventListener('DOMContentLoaded', function() {
-    // Fix hover text colors
-    const interestItems = document.querySelectorAll('.interest-item');
-    const skillTags = document.querySelectorAll('.skill-tag');
-    const submittedStatuses = document.querySelectorAll('.status.submitted, .research-status.submitted');
-    
-    // Fix research interests hover
-    interestItems.forEach(item => {
-        item.addEventListener('mouseover', function() {
-            this.style.color = 'white';
-        });
-        item.addEventListener('mouseout', function() {
-            this.style.color = '';
-        });
-    });
-    
-    // Fix technical skills hover
-    skillTags.forEach(tag => {
-        tag.addEventListener('mouseover', function() {
-            this.style.color = 'white';
-        });
-        tag.addEventListener('mouseout', function() {
-            this.style.color = '';
-        });
-    });
-    
-    // Fix submitted status colors
-    submittedStatuses.forEach(status => {
-        status.style.backgroundColor = '#8A2BE2';
-        status.style.color = 'white';
-    });
-});
+
 
 <body>
     <!-- Header Section -->
